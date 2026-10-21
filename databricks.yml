@@ -1,0 +1,37 @@
+# Geruest fuer eine Declarative Automation Bundle (ehemals Databricks Asset Bundle).
+# Syntax nach meinem Kenntnisstand - mit `databricks bundle validate` pruefen, bevor du dich darauf verlaesst.
+# TODO-Stellen sind Teil der Uebung (README, Abschnitt 5).
+
+bundle:
+  name: alpina_claims
+
+variables:
+  catalog:
+    description: Ziel-Catalog je Umgebung
+    default: alpina_dev
+  landing_path:
+    description: Volume-Pfad der Landing Zone
+    default: /Volumes/alpina_dev/landing/files
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://<DEIN-WORKSPACE>   # TODO
+  prod:
+    mode: production
+    variables:
+      catalog: alpina_prod
+      landing_path: /Volumes/alpina_prod/landing/files
+    workspace:
+      host: https://<DEIN-WORKSPACE>   # TODO
+
+resources:
+  jobs:
+    alpina_daily:
+      name: alpina_daily_${bundle.target}
+      # TODO: tasks (ingest_members, ingest_claims, silver_*, dq_check, condition, gold)
+      # TODO: depends_on, retries (max_retries / min_retry_interval_millis)
+      # TODO: trigger (file_arrival auf ${var.landing_path}/claims/)
+      # TODO: base_parameters / job parameters mit ${var.catalog}

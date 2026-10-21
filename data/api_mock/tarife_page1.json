@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "tarif_id": "T01",
+      "bezeichnung": "Standard",
+      "rabatt_pct": 0
+    },
+    {
+      "tarif_id": "T02",
+      "bezeichnung": "Hausarzt",
+      "rabatt_pct": 12
+    }
+  ],
+  "page": 1,
+  "next_page": "tarife_page2.json"
+}

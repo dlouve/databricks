@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "tarif_id": "T03",
+      "bezeichnung": "Telmed",
+      "rabatt_pct": 15
+    },
+    {
+      "tarif_id": "T04",
+      "bezeichnung": "HMO",
+      "rabatt_pct": 20
+    }
+  ],
+  "page": 2,
+  "next_page": null
+}
